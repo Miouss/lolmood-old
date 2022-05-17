@@ -1,0 +1,39 @@
+.game-history-card-style{
+    display: flex;
+
+    gap: 1rem;
+
+    margin-right: 1rem;
+}
+
+
+/* PERK */
+
+.card-perk > * > img {
+    height: 4rem;
+    width: 4rem;
+}
+
+
+/* STYLE */
+
+.card-style{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+
+    gap: 0.5rem;
+}
+
+.card-style > * {
+    display: flex;
+
+    gap: 0.3rem;
+}
+
+.card-style > * > * > img {
+    height: 1.5rem;
+    width: 1.5rem;
+} 

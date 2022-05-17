@@ -1,0 +1,67 @@
+footer{
+    display: flex;
+
+    padding-top: 2rem;
+    
+    text-align: center;
+    color: white;
+    background: #33304B;
+}
+
+footer > * {
+    flex: 1;
+}
+
+#logo-copyright > h1{
+    font-family: 'Sumana';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4rem;
+
+    background: linear-gradient(252.44deg, #7878B4 0%, #383B71 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#logo-copyright > p{
+    font-size: 0.6rem;
+}
+
+#legal-mention{
+    flex: 2;
+    align-self: center;
+}
+
+#legal-mention > p {
+    margin: 0;
+    align-self: center;
+    color: #B5B6D1;
+}
+
+
+#developpers-mention{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+
+    gap: 0.4rem;
+}
+
+#developpers-mention > *{
+    flex: 1;
+
+    display: flex;
+    padding-left: 8rem;
+    gap: 0.4rem;
+}
+
+#developpers-mention > * > a{
+    align-self: center;
+}
+
+#developpers-mention > * > span{
+    flex: 1;
+    text-align: left;
+    align-self: center;
+}

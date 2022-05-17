@@ -1,0 +1,10 @@
+.summoner-stats-area{
+    width: 65%;
+
+    display: flex;
+
+    align-self: center;
+    justify-content: space-around;
+    
+    gap: 1rem;
+}

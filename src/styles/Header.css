@@ -1,0 +1,42 @@
+header{
+    display: flex;
+    background-color: white;
+}
+
+header > *{
+    flex: 0.3;
+    padding-bottom: 0.5rem;
+}
+
+#header-logo{
+    align-self: center;
+    text-align: center;
+
+    font-family: 'Sumana';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 48px;
+
+    /* bi_color */
+    background: linear-gradient(252.44deg, #7878B4 0%, #383B71 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#search-bar{
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+}
+
+#search-bar > * {
+    padding: 0;
+    margin: 0;
+}
+
+#language-select{
+    text-align: right;
+}
