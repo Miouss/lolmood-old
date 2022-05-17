@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import GameHistoryCard from "./GameHistoryCard";
 import PageSelector from "./GameHistoryPageSelector";
@@ -6,13 +6,7 @@ import PageSelector from "./GameHistoryPageSelector";
 import "../styles/GameHistory.css";
 
 function GameHistory(props){
-    let [bgColorPageSelector, setBgColorPageSelector] = useState(['inherit', 'black']);
-    let [previousIndex, setPreviousIndex] = useState(1);
-
     let GameHistoryCards = [];
-
-    let[arrayIndex, setArrayIndex] = useState(0);
-
     let key = 0;
 
     props.data.forEach(element => {
@@ -23,11 +17,26 @@ function GameHistory(props){
         key -= 1;
     });
 
+    let [bgColorPageSelector, setBgColorPageSelector] = useState(() => {
+        let array = ['black'];
+
+        for(let i = 1; i < GameHistoryCards.length / 5; i++){
+            array.push(['inherit']);
+        }
+
+        return array;
+    });
+
+    let [previousIndex, setPreviousIndex] = useState(0);
+
+    let[arrayIndex, setArrayIndex] = useState(0);
+
     function handleSwitchPage(buttonIndex, previousIndex){
         setArrayIndex(buttonIndex * 5);
         
         if(buttonIndex !== previousIndex){
             let oldArray = bgColorPageSelector;
+
             oldArray[previousIndex] = 'inherit';
             oldArray[buttonIndex] = 'black';
             setBgColorPageSelector(oldArray);
@@ -38,6 +47,7 @@ function GameHistory(props){
 
     function displayPageSelector(){
         let pageSelectorArray = [];
+    
 
         for(let i = 0; i < GameHistoryCards.length / 5; i++){
             pageSelectorArray.push(<PageSelector key={i} handleSwitchPage={handleSwitchPage} bgColorPageSelector={bgColorPageSelector} previousIndex={previousIndex} indexButton={i} />
@@ -46,6 +56,10 @@ function GameHistory(props){
 
         return pageSelectorArray;
     }
+
+    useEffect(() => {
+        handleSwitchPage(0, previousIndex);
+    }, [props.data]);
 
     return (
         <>
