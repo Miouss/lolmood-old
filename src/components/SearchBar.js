@@ -11,7 +11,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 
-function Homepage(props) {
+function SearchBar(props) {
     let [regionSelected, setRegionSelected] = useState(null);
 
     let [isRegionSelectHidden, setRegionSelectHidden] = useState(true);
@@ -132,4 +132,4 @@ function Homepage(props) {
     )
 }
 
-export default Homepage;
+export default SearchBar;

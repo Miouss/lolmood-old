@@ -7,7 +7,7 @@ import SummonerStats from "./SummonerStats";
 
 import "../styles/Header.css"
 
-export default function Header(props){
+function Header(props){
     let [data, setData] = useState(null);
 
     useEffect(() =>{
@@ -34,3 +34,5 @@ export default function Header(props){
         </>
     )
 }
+
+export default Header;

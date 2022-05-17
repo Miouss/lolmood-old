@@ -5,10 +5,10 @@ import Header from './Header';
 import SearchBar from "./SearchBar";
 import SummonerStats from "./SummonerStats";
 
-import "../styles/Homepage.css";
+import "../styles/MainPage.css";
 
 
-function Homepage(props){
+function MainPage(props){
     let [data, setData] = useState(null);
 
     useEffect(() =>{
@@ -32,4 +32,4 @@ function Homepage(props){
     
 }
 
-export default Homepage;
+export default MainPage;
