@@ -12,5 +12,19 @@
 }
 
 .game-page{
-    text-align: right;
+    padding-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+.page-selector{
+    width: 45px;
+    height: 6px;
+
+    border: none;
+
+    background-color: inherit;
+
+    background-image: url(../assets/page-selector.png);
 }
