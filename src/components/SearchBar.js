@@ -12,7 +12,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 
 function SearchBar(props) {
-    let [regionSelected, setRegionSelected] = useState(null);
+    let [regionSelected, setRegionSelected] = useState(undefined);
 
     let [isRegionSelectHidden, setRegionSelectHidden] = useState(true);
     let [regionBackground, setRegionBackground] = useState("center");
@@ -48,7 +48,7 @@ function SearchBar(props) {
         let count = parseInt(document.getElementById('count-search').value);
         let summonerName = document.getElementById('summoner-search').value;
 
-        if (regionSelected === "none") {
+        if (regionSelected === undefined) {
             alert("You have to select a region first");
         } else if (summonerName === '') {
             alert("You have to enter a summoner name to search");
@@ -92,19 +92,15 @@ function SearchBar(props) {
         }
     }
 
-    useEffect(() => {
-        setRegionSelected(document.getElementById("region-select").value);
-    }, []);
-
     return (
         <>
             <form onSubmit={(event) => handleSubmit(event)}>
                 <div id="region-select-block" style={{ backgroundPosition: `${regionBackground}` }}>
                     <label onClick={() => handleOnClick("region")} htmlFor="region-select">Region</label>
                     <select hidden={isRegionSelectHidden} id="region-select" onChange={(e) => setRegionSelected(e.target.value)}>
-                        <option value="none" selected disabled hidden />
-                        <SearchOption region="EUNE" />
+                        <option hidden />
                         <SearchOption region="EUW" />
+                        <SearchOption region="EUNE" />
                         <SearchOption region="NA" />
                         <SearchOption region="BR" />
                         <SearchOption region="LAN" />

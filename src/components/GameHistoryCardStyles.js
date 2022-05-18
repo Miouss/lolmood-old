@@ -9,7 +9,7 @@ import { stylesImgs, statsModImgs } from "./runesImg";
 import "../styles/GameHistoryCardStyles.css"
 
 function GameHistoryCardStyles(props){
-    let perkIcon = null; 
+    let perkIcon = undefined; 
     let runeIcons = [];
     let statsModIcons = [];
     

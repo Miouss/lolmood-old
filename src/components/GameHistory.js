@@ -11,7 +11,7 @@ function GameHistory(props){
 
     props.data.forEach(element => {
         GameHistoryCards.push(
-            <GameHistoryCard key={key} data={element}/>
+            <GameHistoryCard key={key} data={element} main={props.main} />
         )
 
         key -= 1;

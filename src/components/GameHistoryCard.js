@@ -7,6 +7,8 @@ import { getSummonerImg } from "./runesImg";
 
 import "../styles/GameHistoryCard.css";
 
+import ChampStats from "./ChampStats";
+
 function GameHistoryCard(props) {
     let[colorOpacity, setColorOpacity] = useState(1);
 
@@ -33,7 +35,7 @@ function GameHistoryCard(props) {
     
     return (
         <>
-            <div onMouseEnter={() => setColorOpacity(0.5)} onMouseLeave={() => setColorOpacity(1)} className="game-history-card" style={{border: "solid 1px " + color}}>
+            <div onMouseEnter={() => setColorOpacity(0.5)} onMouseLeave={() => setColorOpacity(1)} onClick={() => goToChampPage(champName, props.main)} className="game-history-card" style={{border: "solid 1px " + color}}>
                 <div className="game-history-card-champ-lane">
                     <div className="champ-container">
                         <img className="champ-img" src={champImg} alt={champName} /> 
@@ -66,6 +68,10 @@ function GameHistoryCard(props) {
             </div>
         </>
     );
+}
+
+function goToChampPage(champName, main){
+    main.render(<ChampStats champName={champName} main={main} />);
 }
 
 export default GameHistoryCard;

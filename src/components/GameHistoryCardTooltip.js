@@ -4,12 +4,12 @@ import ReactTooltip from "react-tooltip";
 function GameHistoryCardTooltip(props){
     switch(props.type){
         case "runes": 
-            if(props.runeJSON === null){
+            if(props.runeJSON === undefined){
                 return <img class="runes" alt="" />;
             } 
             return setRunesTooltip(props.runeJSON, props.idRunes, props.runeIcon, props.index, props.row)
         case "perk" :
-            if(props.runeJSON === null){
+            if(props.runeJSON === undefined){
                 return <img class="runes" alt="" />;
             }
             return setPerkToolTip(props.runeJSON, props.idPerk, props.perkIcon)

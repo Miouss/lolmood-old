@@ -9,16 +9,16 @@ import "../styles/MainPage.css";
 
 
 function MainPage(props){
-    let [data, setData] = useState(null);
+    let [data, setData] = useState(undefined);
 
     useEffect(() =>{
-        if(data != null){
+        if(data !== undefined){
             props.header.render(<Header main={props.main} />)
         }
     }, [data, props.header, props.main]);
 
-    if (data != null){
-        return <SummonerStats data={data} />
+    if (data !== undefined){
+        return <SummonerStats data={data} main={props.main} />
     }else{
       return(
             <>

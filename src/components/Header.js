@@ -12,7 +12,7 @@ function Header(props){
 
     useEffect(() =>{
         if(data != null){
-            props.main.render(<SummonerStats data={data} />);
+            props.main.render(<SummonerStats data={data} main={props.main}/>);
         }
     }, [data, props.main]);
 

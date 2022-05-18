@@ -10,7 +10,7 @@ function SummonerStats(props) {
         <>  
             <div className="summoner-stats-area">
                 <StatsByChamp data={Object.entries(props.data["KeyStats"]["statsByChamp"])} />
-                <GameHistory data={props.data["GameHistoryData"]}/>                 
+                <GameHistory data={props.data["GameHistoryData"]} main={props.main}/>                 
             </div>
         </>
     );
