@@ -63,7 +63,7 @@ function GameHistory(props){
 
     return (
         <>
-            <div>
+            <div className="game-history-page-container">
                 <div className="game-history">
 
                 {GameHistoryCards[arrayIndex]}

@@ -52,7 +52,7 @@ function SearchBar(props) {
             alert("You have to select a region first");
         } else if (summonerName === '') {
             alert("You have to enter a summoner name to search");
-        }else if(isNaN(count) || count < 1 || count > 49){
+        }else if(isNaN(count) || count < 1 || count > 99){
             alert("You have to enter a number of history game between 1 - 49");
         }
 

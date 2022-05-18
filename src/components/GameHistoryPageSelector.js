@@ -1,6 +1,6 @@
 function PageSelector(props) {
     return (
-        <button class="page-selector" onClick={() => props.handleSwitchPage(props.indexButton, props.previousIndex)} style={{backgroundColor : props.bgColorPageSelector[props.indexButton]}}></button>
+        <img class="page-selector" onClick={() => props.handleSwitchPage(props.indexButton, props.previousIndex)} style={{backgroundColor : props.bgColorPageSelector[props.indexButton]}} src={require("../assets/page-selector.png")} alt="page-selector-button" />
     )
 }
 
