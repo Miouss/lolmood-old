@@ -1,4 +1,169 @@
-#perk-stats{
+#rune-complete-container{
+    width: max-content;
+
+}
+
+#rune-title{
+    font-family: 'Dune Rise';
+    font-style: normal;
+    font-weight: 400;
+
+    text-transform: capitalize;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    /* gold_border */
+    background: linear-gradient(0deg, rgba(193, 172, 99, 0.15), rgba(193, 172, 99, 0.15)), linear-gradient(135deg, #604C2D 0.25%, #705424 24.73%, #C1AC63 52.85%, #FEFAC1 65.87%, #E8C17D 100.25%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-align: center;
+}
+
+#rune-frame{
+    display: flex;
+}
+
+#rune-frame-svg{
+    position: relative;
+}
+
+#runes-contents{
+    display: flex;
+    position: absolute;
+    margin-top: 2rem;
+    margin-left: 3rem;
+}
+
+/* PRIMARY STYLE LAYOUT */
+
+#primary-style-container{
+    /* runes_01 */
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+
+    position: relative;
+    width: 133px;
+    height: 269px;
+
+
+    color:white;
+}
+
+#primary-style-svg{
+    position: absolute;
+
+    top: 62px;
+}
+
+#primary-style-runes{
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    gap: 16px;
+
+    width: 80px;
+    height: 224px;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+#runes-tree-perk {
+    margin-bottom: 0.3rem;
+}
+#runes-tree-perk > img{
     width: 64px;
     height: 64px;
+}
+
+
+/* SUB STYLE LAYOUT */
+
+#sub-style-container{
+    color: white;
+
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+
+    position: relative;
+    width: 125px;
+    height: 141px;
+}
+
+#sub-style-runes{
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    gap: 16px;
+
+    width: 48px;
+    height: 96px;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+#sub-style-svg{
+    position: absolute;
+
+    top: 46px;
+}
+
+/* STATS MODS LAYOUT */
+
+#stats-mods-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    gap: 16px;
+
+    position: relative;
+    width: 48px;
+    height: 144px;
+    left: 40px;
+}
+
+#stats-mods-svg{
+    position: absolute;
+
+    top: 38px;  
+}
+/* COMMON STYLE */
+
+.runes-tree-style{
+    width: 16px;
+    height: 16px;
+}
+
+.runes-tree-rune{
+    width: 32px;
+    height: 32px;
 }

@@ -29,7 +29,7 @@ form label:hover {
     flex-direction: column;
 
     background-repeat: no-repeat;
-    background-image: url(../assets/regionbg.png);
+    background-image: url(../assets/region.svg);
 }
 
 #region-select-block > label{
@@ -70,7 +70,7 @@ select{
     flex-direction: column;
 
     background-repeat: no-repeat;
-    background-image: url(../assets/sumsearchbg.png);
+    background-image: url(../assets/search-input.svg);
 
     padding-bottom: 0.1rem;
 }
@@ -103,7 +103,7 @@ select{
     flex-direction: column;
 
     background-repeat: no-repeat;
-    background-image: url(../assets/sumsearchbg.png);
+    background-image: url(../assets/search-input.svg);
 
     padding-bottom: 0.1rem;
 }

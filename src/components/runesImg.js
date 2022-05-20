@@ -91,6 +91,7 @@ export const stylesImgs = [
     {
         "id" : 8100,
         "img" : Domination,
+        "name" : "Domination",
         "runes" : [
             {
                 "id" : 8112,
@@ -153,6 +154,7 @@ export const stylesImgs = [
     {
         "id" : 8000,
         "img" : Precision,
+        "name" : "Precision",
         "runes" : [
             {
                 "id" : 8005,
@@ -211,6 +213,7 @@ export const stylesImgs = [
     {
         "id" : 8200,
         "img" : Sorcery,
+        "name" : "Sorcery",
         "runes" : [
             {
                 "id" : 8214,
@@ -269,6 +272,7 @@ export const stylesImgs = [
     {
         "id" : 8300,
         "img" : Inspiration,
+        "name" : "Inspiration",
         "runes" : [
             {
                 "id" : 8351,
@@ -323,6 +327,7 @@ export const stylesImgs = [
     {
         "id" : 8400,
         "img" : Resolve,
+        "name" : "Resolve",
         "runes" : [
             {
                 "id" : 8463,
