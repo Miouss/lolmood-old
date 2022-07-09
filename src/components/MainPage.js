@@ -1,26 +1,45 @@
-import {useEffect, useState} from 'react'
-import SearchBar from './SearchBar';
+import { useEffect, useState } from "react";
+import SearchBar from "./SearchBar";
 import SummonerStats from "./SummonerStats";
 import ChampStats from "./ChampStats";
 
-function MainPage(props){
-    let [goToChampPage, setGoToChampPage] = useState([false, ""]);
-    
-    useEffect(() => {
-        setGoToChampPage([false, ""])
-    }, [props.data]);
+function MainPage(props) {
+  let [goToChampPage, setGoToChampPage] = useState([false, ""]);
 
-    if(props.data === null){
-        return<>
-            <div className="search-container">
-                <SearchBar hideCount={true} area="main" data={props.data} setData={props.setData} />
-            </div>
-        </>
-    }else if(goToChampPage[0] === false){
-        return <SummonerStats data={props.data} lang={props.lang} main={props.main} setGoToChampPage={setGoToChampPage} />
-    }else{
-        return <ChampStats champName={goToChampPage[1]} setGoToChampPage={setGoToChampPage} />
-    }
+  useEffect(() => {
+    setGoToChampPage([false, ""]);
+  }, [props.data]);
+
+  if (props.data === null) {
+    return (
+      <>
+        <div className="search-container">
+          <SearchBar
+            hideCount={true}
+            area="main"
+            data={props.data}
+            setData={props.setData}
+          />
+        </div>
+      </>
+    );
+  } else if (goToChampPage[0] === false) {
+    return (
+      <SummonerStats
+        data={props.data}
+        lang={props.lang}
+        main={props.main}
+        setGoToChampPage={setGoToChampPage}
+      />
+    );
+  } else {
+    return (
+      <ChampStats
+        champName={goToChampPage[1]}
+        setGoToChampPage={setGoToChampPage}
+      />
+    );
+  }
 }
 
 export default MainPage;
