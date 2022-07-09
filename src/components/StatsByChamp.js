@@ -18,9 +18,11 @@ function StatsByChamp(props) {
     return (
         <>
             <div className="stats-by-champ-card-area">
-                {StatsByChampCards[0]}
-                {StatsByChampCards[1]}
-                {StatsByChampCards[2]}
+                <div>
+                    {StatsByChampCards[0]}
+                    {StatsByChampCards[1]}
+                    {StatsByChampCards[2]}   
+                </div>                 
             </div>            
         </>
     )

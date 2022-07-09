@@ -1,40 +1,28 @@
 import React from "react";
 
-import runesJSON from "../assets/loldata/current/data/en_US/runesReforged.json";
+import enRunesJSON from "../assets/loldata/current/data/en_US/runesReforged.json";
+import frRunesJSON from "../assets/loldata/current/data/fr_FR/runesReforged.json";
 
 import GameHistoryCardTooltip from "./GameHistoryCardTooltip";
 
-import { stylesImgs, statsModImgs } from "./runesImg";
+import { statsModImgs, getRuneImg } from "./runesImg";
 
 import "../styles/GameHistoryCardStyles.css"
 
 function GameHistoryCardStyles(props){
-    let perkIcon = undefined; 
-    let runeIcons = [];
+    let perkIcon = getRuneImg(props.idPerk); 
+
     let statsModIcons = [];
+    props.idStatsMods.forEach((idStatsMod, index) => {
+        statsModIcons[index] = statsModImgs[idStatsMod];
+    });
     
+    let runeIcons = [];
 
-    statsModImgs.forEach(statsModImg => {
-        props.idStatsMods.forEach((idStatsMod, index) => {
-            statsModIcons[index] = (statsModImg["id"] === idStatsMod) ? statsModImg["img"] : statsModIcons[index];
-        });
-    });
-
-    stylesImgs.forEach(stylesImg => {
-        if (props.idPrimaryStyle === stylesImg["id"] || props.idSubStyle === stylesImg["id"]) {
-            stylesImg["runes"].forEach(rune => {
-                if(rune["id"] === props.idPerk){
-                    perkIcon = rune["img"];
-                }
-
-                else{
-                    props.idRunes.forEach((idRune, index) => {
-                        runeIcons[index] = (rune["id"] === idRune) ? rune["img"] : runeIcons[index];
-                    })
-                }       
-            });
-        }
-    });
+    props.idRunes.forEach((idRune, index) => {
+        runeIcons[index] = getRuneImg(idRune);
+    })
+      
 
     let primaryRuneIcons = [];
     let subRuneIcons = [];
@@ -43,8 +31,10 @@ function GameHistoryCardStyles(props){
         (index < 3) ? primaryRuneIcons.push(runeIcon) : subRuneIcons.push(runeIcon);
     })
 
-    let primaryRuneJSON = null;
-    let subRuneJSON = null;
+    let primaryRuneJSON = undefined;
+    let subRuneJSON = undefined;
+
+    let runesJSON = (props.lang === "fr") ? frRunesJSON : enRunesJSON;
 
     runesJSON.forEach(style => {
         if(style["id"] === props.idPrimaryStyle){

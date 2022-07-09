@@ -2,8 +2,8 @@ form {
     min-height: 5rem;
 
     display: flex;
-
-    gap: 3.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 
     border-radius: 2rem;
 

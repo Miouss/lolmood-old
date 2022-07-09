@@ -1,0 +1,153 @@
+ /* GLOBAL LAYOUT */
+
+ #items-frame {
+    width: fit-content;
+    
+    margin-left: 1rem;
+
+    display: flex;
+    flex-direction: column;
+ }
+
+ #items-set-title {
+    font-size: 1.7rem;
+    color: white;
+ }
+
+ /* SVGs LAYOUT */
+
+ #all-items-and-svgs-container {
+    display: flex;
+    align-self: center;
+ }
+
+ #items-frame-img {
+    position: relative;
+
+    height: 700px;
+ }
+
+ #items-design-img {
+    position: absolute;
+    display: flex;
+    margin-left: 14.7rem;
+    margin-top: 1.3rem;
+ }
+
+ /* ALL ITEMS CONTAINER */
+
+ #all-items-container {
+    position: absolute;
+
+    width: 320px;
+    height: 680px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin: 1rem;
+    margin-top: 2.5rem;
+
+    gap: 2.6rem;
+ }
+
+ #all-items-container > * {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 0.5rem;
+ }
+
+ .items-title {
+    /* body_text_02 */
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    /* text_color */
+    color: #33304B;
+ }
+
+ /* ITEMS DISPLAY AREA */
+
+ .items-display-area {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+ }
+
+ .items-img {
+    width: 48px;
+    height: 48px;
+ }
+
+ .single-item-container {
+    display: flex;
+
+    align-items: center;
+ }
+
+ .single-item-container > div {
+    display: flex;
+    flex-direction: column;
+ }
+
+ .single-item-container-rate {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    padding-left: 1rem;
+ }
+
+/* FOURTH FIFTH ITEMS LAYOUT */
+
+#fourth-fifth-items-container{
+   display: flex;
+   flex-direction: row;
+
+   gap: 1rem;
+}
+
+#fourth-fifth-items-container > *{
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+
+}
+
+.fourth-fifth-items-display-container{
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+}
+
+/* SIXTH ITEMS LAYOUT */
+
+#sixth-items-display-container{
+   display: flex;
+   flex-wrap: wrap;
+
+   row-gap: 0.5rem;
+}
+
+#sixth-items-display-container > *{
+   flex: 50%;
+   padding: 0;
+}
+
+#sixth-items-display-container > :last-child{
+   justify-content: center;
+}

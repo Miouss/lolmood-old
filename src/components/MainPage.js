@@ -1,35 +1,26 @@
-import React,{ useState, useEffect } from 'react';
-import ReactDOM from "react-dom/client";
-
-import Header from './Header';
-import SearchBar from "./SearchBar";
+import {useEffect, useState} from 'react'
+import SearchBar from './SearchBar';
 import SummonerStats from "./SummonerStats";
-
-import "../styles/MainPage.css";
-
+import ChampStats from "./ChampStats";
 
 function MainPage(props){
-    let [data, setData] = useState(undefined);
-
-    useEffect(() =>{
-        if(data !== undefined){
-            props.header.render(<Header main={props.main} />)
-        }
-    }, [data, props.header, props.main]);
-
-    if (data !== undefined){
-        return <SummonerStats data={data} main={props.main} />
-    }else{
-      return(
-            <>
-                <img src={require("../assets/decor-frame.svg")} alt='' />
-                <div className="search-container">
-                    <SearchBar hideCount={true} area="main" data={data} setData={setData} />
-                </div>
-            </>
-        )  
-    }
+    let [goToChampPage, setGoToChampPage] = useState([false, ""]);
     
+    useEffect(() => {
+        setGoToChampPage([false, ""])
+    }, [props.data]);
+
+    if(props.data === null){
+        return<>
+            <div className="search-container">
+                <SearchBar hideCount={true} area="main" data={props.data} setData={props.setData} />
+            </div>
+        </>
+    }else if(goToChampPage[0] === false){
+        return <SummonerStats data={props.data} lang={props.lang} main={props.main} setGoToChampPage={setGoToChampPage} />
+    }else{
+        return <ChampStats champName={goToChampPage[1]} setGoToChampPage={setGoToChampPage} />
+    }
 }
 
 export default MainPage;

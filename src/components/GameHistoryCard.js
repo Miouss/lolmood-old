@@ -7,8 +7,6 @@ import { getSummonerImg } from "./runesImg";
 
 import "../styles/GameHistoryCard.css";
 
-import ChampStats from "./ChampStats";
-
 function GameHistoryCard(props) {
     let[colorOpacity, setColorOpacity] = useState(1);
 
@@ -32,10 +30,10 @@ function GameHistoryCard(props) {
     )];
 
     let color = props.data["win"] === 1 ? "rgba(32, 140, 209, " + colorOpacity + ")" : "rgba(189, 37, 124, " + colorOpacity + ")";
-    
+
     return (
         <>
-            <div onMouseEnter={() => setColorOpacity(0.5)} onMouseLeave={() => setColorOpacity(1)} onClick={() => goToChampPage(champName, props.main)} className="game-history-card" style={{border: "solid 1px " + color}}>
+            <div onMouseEnter={() => setColorOpacity(0.5)} onMouseLeave={() => setColorOpacity(1)} onClick={() => props.setGoToChampPage([true, champName])} className="game-history-card" style={{border: "solid 1px " + color}}>
                 <div className="game-history-card-champ-lane">
                     <div className="champ-container">
                         <img className="champ-img" src={champImg} alt={champName} /> 
@@ -50,8 +48,8 @@ function GameHistoryCard(props) {
                     <img src={summonerImg[1]} alt={lane} /> 
                 </div>
                 
-                <GameHistoryCardStyles idRunes={props.data["runes"]} idStatsMods={props.data["statsMods"]} idPrimaryStyle={props.data["primaryStyle"]} idSubStyle={props.data["subStyle"]} idPerk={props.data["perk"]} identifier={props.data["identifier"]} />
-                <GameHistoryCardItems idItems={props.data["items"]} identifier={props.data["identifier"]}/>
+                <GameHistoryCardStyles idRunes={props.data["runes"]} idStatsMods={props.data["statsMods"]} idPrimaryStyle={props.data["primaryStyle"]} idSubStyle={props.data["subStyle"]} idPerk={props.data["perk"]} identifier={props.data["identifier"]} lang={props.lang} />
+                <GameHistoryCardItems idItems={props.data["items"]} identifier={props.data["identifier"]} lang={props.lang} />
 
                 <div className="game-history-card-kda" style={{backgroundColor: color}}>
                     <div>
@@ -68,10 +66,6 @@ function GameHistoryCard(props) {
             </div>
         </>
     );
-}
-
-function goToChampPage(champName, main){
-    main.render(<ChampStats champName={champName} main={main} />);
 }
 
 export default GameHistoryCard;

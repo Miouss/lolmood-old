@@ -8,3 +8,9 @@
     
     gap: 1rem;
 }
+
+.summoner-stats-area > div:first-of-type{
+    display: flex;
+
+    flex-direction: column;
+}

@@ -1,0 +1,62 @@
+#champ-stats-component{
+    width: 100%;
+    height: 900px;
+
+    position: relative;
+
+    display: flex;
+    align-self: center;
+}
+
+#champ-stats-component > * {
+    width: 100%;
+
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+}
+
+#switch-component{
+    padding-left: 40rem;
+    padding-top: 5rem;
+    z-index: 1;
+}
+
+#back-button-component{
+    padding-left: 70rem;
+
+    border: none;
+    background-color: inherit;
+    cursor: default;
+    z-index: 1;
+}
+
+#back-button-component > img{
+    cursor: pointer;
+}
+
+#champ-component{
+    padding-top: 6rem;
+    padding-left: 4rem;
+}
+
+#runes-component{
+    padding-right: 50rem;
+}
+
+#sums-component{
+    padding-right: 50rem;
+    padding-top: 28rem;
+}
+
+#items-component{
+    padding-top: 10rem;
+    padding-left: 52.5rem;
+}
+
+#skills-component{
+    align-self: flex-end;
+
+    padding-right: 24rem;
+}

@@ -1,7 +1,8 @@
 import React from "react";
 import GameHistoryCardTooltip from "./GameHistoryCardTooltip";
 
-import itemsJSON from "../assets/loldata/current/data/en_US/item.json";
+import enItemsJSON from "../assets/loldata/current/data/en_US/item.json";
+import frItemsJSON from "../assets/loldata/current/data/fr_FR/item.json";
 
 import { getItemImg } from "./runesImg";
 
@@ -19,6 +20,8 @@ function GameHistoryCardItems(props){
             itemsIconsSecondRow[i-3] = getItemImg(props.idItems[i]);
         }
     }
+    
+    let itemsJSON = (props.lang === "fr") ? frItemsJSON : enItemsJSON;
 
     return(
         <>

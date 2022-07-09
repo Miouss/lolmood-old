@@ -26,7 +26,7 @@ function SearchBar(props) {
     let [searchIcon, setSearchIcon] = useState(faMagnifyingGlass);
 
     async function fetchData() {
-        const url = "http://localhost/index.php?summonerName=" + document.getElementById('summoner-search').value 
+        const url =  "http://lolmood.net/index.php?summonerName=" + document.getElementById('summoner-search').value 
                     + "&region=" + regionSelected
                     + "&count=" + document.getElementById('count-search').value;
 
@@ -36,7 +36,7 @@ function SearchBar(props) {
 
         setSearchIcon(faMagnifyingGlass);
         if (typeof data === 'string') {
-            alert('The summoner name searched doesnt exist in the database, try another one !');
+            alert(data);
         } else {
             props.setData(data);
         }
