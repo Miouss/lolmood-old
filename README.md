@@ -1,6 +1,6 @@
 # Download Local Files
 
-In order for the UI to work, you need to download the lastest local files of the current update or League of Legends.
+In order for the UI to work, you need to download the lastest local files of League of Legends' current update.
 
 Download here : https://ddragon.leagueoflegends.com/cdn/dragontail-12.12.1.tgz
 
