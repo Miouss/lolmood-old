@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from "react-dom/client";
 
 import logoSVG from "../assets/logo.svg";
 import englishFlag from "../assets/english-flag.svg";
@@ -9,7 +8,6 @@ import SearchBar from './SearchBar';
 
 import "../styles/Header.css";
 
-import SummonerStats from "./SummonerStats";
 import MainPage from './MainPage';
 
 function Header(props){
