@@ -11,7 +11,8 @@ import "../styles/Header.css";
 
 function Header(props) {
 
-  if (props.data === null) {
+
+  if (data === null) {
     return null;
   }
   return (
