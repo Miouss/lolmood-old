@@ -12,10 +12,6 @@ function App() {
   let [frFlagWidth, setFrFlag] = useState("100%");
   let [enFlagWidth, setEnFlag] = useState("50%");
 
-
-  let mainPageHeight = (data === null) ? "84%" : "fit-content";
-  let footerPageHeight = (data === null) ? "16%" : "fit-content";
-
   return (
     <>
       <header>
@@ -30,10 +26,10 @@ function App() {
           setEnFlag={setEnFlag}
         />
       </header>
-      <main style={{height : mainPageHeight}}>
+      <main>
         <MainPage data={data} setData={setData} lang={lang} setLang={setLang} />
       </main>
-      <footer style={{height : footerPageHeight}}>
+      <footer>
         <Footer />
       </footer>
     </>

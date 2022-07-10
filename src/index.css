@@ -19,6 +19,7 @@ body {
 }
 
 #root > main{
+    min-height: 84%;
     display: flex;
     flex-direction: column;
     background: linear-gradient(252.44deg, #7878B4 0%, #383B71 100%);
