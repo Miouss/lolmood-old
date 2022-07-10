@@ -10,9 +10,7 @@ import "../styles/Header.css";
 
 
 function Header(props) {
-
-
-  if (data === null) {
+  if (props.data === null) {
     return null;
   }
   return (
