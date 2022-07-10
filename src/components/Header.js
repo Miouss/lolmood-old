@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import logoSVG from "../assets/logo.svg";
 import englishFlag from "../assets/english-flag.svg";
@@ -8,32 +8,10 @@ import SearchBar from "./SearchBar";
 
 import "../styles/Header.css";
 
-import MainPage from "./MainPage";
 
 function Header(props) {
-  let [data, setData] = useState(null);
 
-  let [lang, setLang] = useState("fr");
-
-  let [frFlagWidth, setFrFlag] = useState("100%");
-  let [enFlagWidth, setEnFlag] = useState("50%");
-
-  useEffect(() => {
-    props.main.render(
-      <>
-        <MainPage
-          data={data}
-          setData={setData}
-          lang={lang}
-          setLang={setLang}
-          main={props.main}
-        />
-      </>
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data, lang]);
-
-  if (data === null) {
+  if (props.data === null) {
     return null;
   }
   return (
@@ -44,28 +22,28 @@ function Header(props) {
       </div>
 
       <div id="search-bar">
-        <SearchBar hideCount={false} data={data} setData={setData} />
+        <SearchBar hideCount={false} data={props.data} setData={props.setData} />
       </div>
 
       <div id="language-select">
         <div
           onClick={() => {
-            setFrFlag("100%");
-            setEnFlag("50%");
-            setLang("fr");
+            props.setFrFlag("100%");
+            props.setEnFlag("50%");
+            props.setLang("fr");
           }}
         >
-          <img style={{ width: frFlagWidth }} src={frenchFlag} />
+          <img style={{ width: props.frFlagWidth }} src={frenchFlag} />
         </div>
 
         <div
           onClick={() => {
-            setEnFlag("100%");
-            setFrFlag("50%");
-            setLang("en");
+            props.setEnFlag("100%");
+            props.setFrFlag("50%");
+            props.setLang("en");
           }}
         >
-          <img style={{ width: enFlagWidth }} src={englishFlag} />
+          <img style={{ width: props.enFlagWidth }} src={englishFlag} />
         </div>
       </div>
     </>
