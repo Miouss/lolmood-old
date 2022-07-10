@@ -3,6 +3,8 @@ import SearchBar from "./SearchBar";
 import SummonerStats from "./SummonerStats";
 import ChampStats from "./ChampStats";
 
+import "../styles/MainPage.css"
+
 function MainPage(props) {
   let [goToChampPage, setGoToChampPage] = useState([false, ""]);
 
