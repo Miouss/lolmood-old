@@ -28,7 +28,6 @@ function MainPage(props) {
       <SummonerStats
         data={props.data}
         lang={props.lang}
-        main={props.main}
         setGoToChampPage={setGoToChampPage}
       />
     );
