@@ -1,0 +1,12 @@
+.search-container{
+    flex:1;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background-image: url("../assets/decor-frame.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}

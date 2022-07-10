@@ -12,7 +12,7 @@ function SummonerStats(props) {
                     <SummonerCard data={props.data["Account"]} />
                     <StatsByChamp data={Object.entries(props.data["KeyStats"]["statsByChamp"])} />
                 </div>
-                <GameHistory data={props.data["GameHistoryData"]} main={props.main} lang={props.lang} setGoToChampPage={props.setGoToChampPage} />                 
+                <GameHistory data={props.data["GameHistoryData"]} lang={props.lang} setGoToChampPage={props.setGoToChampPage} />                 
             </div>
         </>
     );

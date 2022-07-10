@@ -1,4 +1,6 @@
 footer{
+    min-height: 16%;
+    
     display: flex;
 
     padding-top: 2rem;
