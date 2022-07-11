@@ -1,55 +1,55 @@
-#summoner-card-frame{
+#summoner-card-frame {
   display: flex;
   justify-content: center;
 }
 
-#summoner-stats-frame{
-    width: 100%;
-    height: 60.5%;
-    display: flex;
-    background-color: rgba(246, 247, 255, 1);
-    align-self: center;
-    justify-content: space-around;
-   
-    gap: 1rem;
+#summoner-stats-frame {
+  width: 100%;
+  height: 60.5%;
+  display: flex;
+  background-color: rgba(246, 247, 255, 1);
+  align-self: center;
+  justify-content: space-around;
 
-    -webkit-transform: translate(-0.04rem);
+  gap: 1rem;
+
+  -webkit-transform: translate(-0.04rem);
 }
 
 #summoner-stats-frame > * {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    color: #7878B4;
-    justify-content: space-around;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #7878b4;
+  justify-content: space-around;
 
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 
-    padding: 0.5rem;
+  padding: 0.5rem;
 }
 
-#summoner-details-frame-svg{
-    width: 253px;
-    height: 236px;
+#summoner-details-frame-svg {
+  width: 253px;
+  height: 236px;
 }
 
-#summoner-details-name-and-rank{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
+#summoner-details-name-and-rank {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
 
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 
-    -webkit-transform: translate(3.5rem, -13rem);
+  -webkit-transform: translate(3.5rem, -13rem);
 }
 
 #summoner-details-name-and-rank > span {
-    color: white;
+  color: white;
 }
 
-#summoner-details-name-and-rank > img{
-    width: 140px;
-    height: auto;
+#summoner-details-name-and-rank > img {
+  width: 140px;
+  height: auto;
 }

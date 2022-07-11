@@ -1,29 +1,38 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons' 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
-import "../styles/Footer.css"
+import "../styles/Footer.css";
 
-export default function Footer(){
-    return <>
-        <div id="logo-copyright">
-            <h1>LOL Mood</h1>
-            <p>Copyright ©	2022 Ghabi Samir. All Rights Reserved</p>
+export default function Footer() {
+  return (
+    <>
+      <div id="logo-copyright">
+        <h1>LOL Mood</h1>
+        <p>Copyright © 2022 Ghabi Samir. All Rights Reserved</p>
+      </div>
+
+      <div id="legal-mention">
+        <p>
+          LoL Mood was created under Riot Games' "Legal Jibber Jabber" policy
+          using assets owned by Riot Games. Riot Games does not endorse or
+          sponsor this project.
+        </p>
+      </div>
+
+      <div id="developpers-mention">
+        <div>
+          <a href="google.fr">
+            <FontAwesomeIcon icon={faLinkedin} size="2x" />
+          </a>
+          <span>Developped by Samir Ghabi</span>
         </div>
-
-        <div id="legal-mention">
-            <p>LoL Mood was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games.  
-                Riot Games does not endorse or sponsor this project.</p>
+        <div>
+          <a href="google.fr">
+            <FontAwesomeIcon icon={faLinkedin} size="2x" />
+          </a>
+          <span>Designed by Evans Riss Yaw</span>
         </div>
-
-        <div id="developpers-mention">
-            <div>
-                <a href="google.fr"><FontAwesomeIcon icon={faLinkedin} size="2x" /></a>
-                <span>Developped by Samir Ghabi</span>
-            </div>
-            <div>
-                <a href="google.fr"><FontAwesomeIcon icon={faLinkedin} size="2x" /></a>
-                <span>Designed by Evans Riss Yaw</span>
-            </div>
-        </div>
-    </>;
+      </div>
+    </>
+  );
 }

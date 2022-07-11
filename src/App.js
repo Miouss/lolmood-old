@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Header from "./components/Header";
-import MainPage from "./components/MainPage";
+import Main from "./components/Main";
 import Footer from "./components/Footer";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
         />
       </header>
       <main>
-        <MainPage data={data} setData={setData} lang={lang} setLang={setLang} />
+        <Main data={data} setData={setData} lang={lang} setLang={setLang} />
       </main>
       <footer>
         <Footer />

@@ -3,9 +3,9 @@ import SearchBar from "./SearchBar";
 import SummonerStats from "./SummonerStats";
 import ChampStats from "./ChampStats";
 
-import "../styles/MainPage.css"
+import "../styles/Main.css";
 
-function MainPage(props) {
+function Main(props) {
   let [goToChampPage, setGoToChampPage] = useState([false, ""]);
 
   useEffect(() => {
@@ -43,4 +43,4 @@ function MainPage(props) {
   }
 }
 
-export default MainPage;
+export default Main;
