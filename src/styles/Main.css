@@ -1,3 +1,14 @@
+main {
+  min-height: 84%;
+  min-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(252.44deg, #7878b4 0%, #383b71 100%);
+
+  padding-top: 4rem;
+  padding-bottom: 3.6rem;
+}
+
 .search-container {
   flex: 1;
 

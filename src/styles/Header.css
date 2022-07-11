@@ -1,8 +1,9 @@
 header {
   display: flex;
+  justify-content: space-around;
 
   background-color: white;
-  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 header > * {
@@ -10,13 +11,10 @@ header > * {
 }
 
 #header-logo {
-  align-self: center;
-
   display: flex;
-  justify-content: center;
-  gap: 3rem;
 
-  padding-left: 4rem;
+  align-items: center;
+  gap: 2rem;
 }
 
 #header-logo > span {
@@ -37,7 +35,6 @@ header > * {
 }
 
 #search-bar {
-  width: 60%;
   display: flex;
   justify-content: center;
 }
@@ -48,18 +45,18 @@ header > * {
 }
 
 #language-select {
-  flex: 1;
-
-  align-self: center;
-  text-align: center;
-
+  padding: 1rem;
   display: flex;
-  gap: 4rem;
+
+  gap: 3rem;
 }
 
 #language-select > * {
   cursor: pointer;
   height: auto;
-
+  
   align-self: center;
+
+  display: flex;
+  justify-content: center;
 }
