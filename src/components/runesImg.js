@@ -6,6 +6,7 @@ import MagicResist from "../assets/loldata/img/perk-images/StatMods/StatModsMagi
 import AttackSpeed from "../assets/loldata/img/perk-images/StatMods/StatModsAttackSpeedIcon.png";
 import CDR from "../assets/loldata/img/perk-images/StatMods/StatModsCDRScalingIcon.png";
 import AdaptiveForce from "../assets/loldata/img/perk-images/StatMods/StatModsAdaptiveForceIcon.png";
+import { icon } from "@fortawesome/fontawesome-svg-core";
 
 function getRunePath() {
   let runePathImg = {};
@@ -59,6 +60,10 @@ const runeImg = importAll(
 );
 
 export const getRuneImg = (id) => {
+  if(typeof runePathImg[id] === 'object'){
+    return runeImg[`${runePathImg[id]["icon"]}`];
+  }
+
   return runeImg[`${runePathImg[id]}`];
 };
 

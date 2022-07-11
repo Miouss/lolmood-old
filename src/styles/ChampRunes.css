@@ -3,9 +3,11 @@
 }
 
 #rune-title {
+  text-align: center;
   font-family: "Dune Rise";
   font-style: normal;
   font-weight: 400;
+  font-size: 2rem;
 
   text-transform: capitalize;
   font-feature-settings: "pnum" on, "lnum" on;
