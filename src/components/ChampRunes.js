@@ -35,7 +35,7 @@ function ChampRunes(props) {
   return (
     <>
       <div id="runes-frame">
-        <h1 id="rune-title">RUNES</h1>
+        <div id="rune-title">RUNES</div>
         <div id="rune-frame">
           <img id="rune-frame-svg" src={runeFrameSVG} alt="slt" />
           <div id="runes-contents">
