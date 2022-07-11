@@ -1,159 +1,158 @@
-.game-history-card-items{
-    flex: 1.5;
-    display: flex;
-    flex-direction: column;
+.game-history-card-items {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
 }
 .game-history-card-items > * {
-    flex: 100%;
-    display: flex;
+  flex: 100%;
+  display: flex;
 
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 
-    gap: 0.3rem;
+  gap: 0.3rem;
 }
-.game-history-card-items > * > *{
-    height: 2rem;
-    width: 2rem;
+.game-history-card-items > * > * {
+  height: 2rem;
+  width: 2rem;
 
-    background-color: black;
-    border: solid black;
-    box-sizing: content-box;
+  background-color: black;
+  border: solid black;
+  box-sizing: content-box;
 }
 
 .game-history-card-items > * > * > img {
-    height: 2rem;
-    width: 2rem;
+  height: 2rem;
+  width: 2rem;
 }
 
-.empty-item::before{
-    content: "\2573";
-    color:darkgray;
-    position: relative;
-    display: block;
-    top: -1rem;
-    left: -0.3rem;
-    font-size: 2.2rem;
+.empty-item::before {
+  content: "\2573";
+  color: darkgray;
+  position: relative;
+  display: block;
+  top: -1rem;
+  left: -0.3rem;
+  font-size: 2.2rem;
 }
 
 /* CSS REACTOOLTIPS */
 
-.tooltip-container{
-    max-width: 20%;
+.tooltip-container {
+  max-width: 20%;
 }
 
-.tooltip-title{
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+.tooltip-title {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.tooltip-title > img{
-    height: 2.25rem;
-    width: 2.25rem;
+.tooltip-title > img {
+  height: 2.25rem;
+  width: 2.25rem;
 }
 
-.tooltip-title > h6{
-    display: flex;
+.tooltip-title > h6 {
+  display: flex;
 
-    align-self: center;
-    justify-self: center;
+  align-self: center;
+  justify-self: center;
 
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
-
 
 /* CSS ITEMS JSON */
 
-maintext{
-    font-size: 1rem;
-    color: lightgray;
+maintext {
+  font-size: 1rem;
+  color: lightgray;
 }
 
-li{
-    margin-top: 1rem;
-    list-style: none;
+li {
+  margin-top: 1rem;
+  list-style: none;
 }
 
-passive{
-    font-weight: bold;
-    color: white;
+passive {
+  font-weight: bold;
+  color: white;
 }
 
-rarityMythic{
-    font-weight: bold;
-    color: white;
+rarityMythic {
+  font-weight: bold;
+  color: white;
 }
 
-active{
-    font-weight: bold;
-    color: white;
+active {
+  font-weight: bold;
+  color: white;
 }
 
-attention{
-    font-weight: bold;
-    color: white;
+attention {
+  font-weight: bold;
+  color: white;
 }
 
-attention:before{
-    content: '+';
+attention:before {
+  content: "+";
 }
 
-rules{
-    font-style: italic; 
+rules {
+  font-style: italic;
 }
 
-rules > *{
-    font-weight: inherit;
-    color: inherit;
+rules > * {
+  font-weight: inherit;
+  color: inherit;
 }
 
 /* ATTRIBUT ITEM JSON */
 
-magicdamage{
-    color: lightblue;
+magicdamage {
+  color: lightblue;
 }
 
-keywordStealth{
-    color: lightgray;
+keywordStealth {
+  color: lightgray;
 }
 
-magicdamage{
-    color: aqua;
+magicdamage {
+  color: aqua;
 }
 
-lifeSteal{
-    color: lightgreen;
+lifeSteal {
+  color: lightgreen;
 }
 
-healing{
-    color: green;
+healing {
+  color: green;
 }
 
-shield{
-    color: burlywood;
+shield {
+  color: burlywood;
 }
 
-physicalDamage{
-    color: red;
+physicalDamage {
+  color: red;
 }
 
-scaleAD{
-    color: lightcoral;
+scaleAD {
+  color: lightcoral;
 }
 
-scaleMana{
-    color: lightskyblue;
+scaleMana {
+  color: lightskyblue;
 }
 
-scaleAP{
-    color: violet;
+scaleAP {
+  color: violet;
 }
 
-status{
-    color:blueviolet;
+status {
+  color: blueviolet;
 }

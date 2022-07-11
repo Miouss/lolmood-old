@@ -5,17 +5,23 @@ import GameHistory from "./GameHistory";
 import "../styles/SummonerStats.css";
 
 function SummonerStats(props) {
-    return (
-        <>
-            <div className="summoner-stats-area">
-                <div>
-                    <SummonerCard data={props.data["Account"]} />
-                    <StatsByChamp data={Object.entries(props.data["KeyStats"]["statsByChamp"])} />
-                </div>
-                <GameHistory data={props.data["GameHistoryData"]} lang={props.lang} setGoToChampPage={props.setGoToChampPage} />                 
-            </div>
-        </>
-    );
+  return (
+    <>
+      <div className="summoner-stats-area">
+        <div>
+          <SummonerCard data={props.data["Account"]} />
+          <StatsByChamp
+            data={Object.entries(props.data["KeyStats"]["statsByChamp"])}
+          />
+        </div>
+        <GameHistory
+          data={props.data["GameHistoryData"]}
+          lang={props.lang}
+          setGoToChampPage={props.setGoToChampPage}
+        />
+      </div>
+    </>
+  );
 }
 
 export default SummonerStats;

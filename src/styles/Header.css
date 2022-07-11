@@ -1,65 +1,65 @@
-header{
-    display: flex;
+header {
+  display: flex;
 
-    background-color: white;
-    flex-wrap: wrap;
+  background-color: white;
+  flex-wrap: wrap;
 }
 
-header > *{
-    padding-bottom: 0.5rem;
+header > * {
+  padding-bottom: 0.5rem;
 }
 
-#header-logo{
-    align-self: center;
+#header-logo {
+  align-self: center;
 
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
 
-    padding-left: 4rem;
+  padding-left: 4rem;
 }
 
-#header-logo > span{
-    align-self: center;
-    text-align: center;
+#header-logo > span {
+  align-self: center;
+  text-align: center;
 
-    font-family: 'Sumana';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 3rem;
-    line-height: 48px;
+  font-family: "Sumana";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 48px;
 
-    /* bi_color */
-    background: linear-gradient(252.44deg, #7878B4 0%, #383B71 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  /* bi_color */
+  background: linear-gradient(252.44deg, #7878b4 0%, #383b71 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-#search-bar{
-    width: 60%;
-    display: flex;
-    justify-content: center;
+#search-bar {
+  width: 60%;
+  display: flex;
+  justify-content: center;
 }
 
 #search-bar > * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
-#language-select{
-    flex:1;
+#language-select {
+  flex: 1;
 
-    align-self: center;
-    text-align: center;
+  align-self: center;
+  text-align: center;
 
-    display: flex;
-    gap: 4rem;
+  display: flex;
+  gap: 4rem;
 }
 
-#language-select > *{
-    cursor: pointer;
-    height: auto;
+#language-select > * {
+  cursor: pointer;
+  height: auto;
 
-    align-self: center;
+  align-self: center;
 }

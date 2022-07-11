@@ -1,16 +1,16 @@
-.summoner-stats-area{
-    width: 65%;
+.summoner-stats-area {
+  width: 65%;
 
-    display: flex;
+  display: flex;
 
-    align-self: center;
-    justify-content: space-around;
-    
-    gap: 1rem;
+  align-self: center;
+  justify-content: space-around;
+
+  gap: 1rem;
 }
 
-.summoner-stats-area > div:first-of-type{
-    display: flex;
+.summoner-stats-area > div:first-of-type {
+  display: flex;
 
-    flex-direction: column;
+  flex-direction: column;
 }

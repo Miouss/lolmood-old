@@ -1,61 +1,60 @@
-#sums-frame{
-    color: white;
+#sums-frame {
+  color: white;
 }
 
-#sums-title{
-    position: absolute;
-    margin-left: 1rem;
+#sums-title {
+  position: absolute;
+  margin-left: 1rem;
 }
 
 /* SVG LAYOUT */
 
-#sums-frame-svg{
-    position: relative;
-    width: 200px;
-    height: 144px;
-    margin-top: 1rem;
-    margin-left: 1rem;
+#sums-frame-svg {
+  position: relative;
+  width: 200px;
+  height: 144px;
+  margin-top: 1rem;
+  margin-left: 1rem;
 }
 
-#sums-design-svg{
-    position: absolute;
+#sums-design-svg {
+  position: absolute;
 
-
-    -webkit-transform: translate(-6.5rem, 8.75rem);
+  -webkit-transform: translate(-6.5rem, 8.75rem);
 }
 
 /* IMGS LAYOUT */
 
-#sums-imgs-container{
-    position: absolute;
-    display: flex;
-    
-    gap: 2rem;
+#sums-imgs-container {
+  position: absolute;
+  display: flex;
 
-    -webkit-transform: translate(3.8rem, -6.5rem);    
+  gap: 2rem;
+
+  -webkit-transform: translate(3.8rem, -6.5rem);
 }
 
-.sums-single-img-container{
-    display: flex;
-    flex-direction: column;
+.sums-single-img-container {
+  display: flex;
+  flex-direction: column;
 }
 
-.sums-single-img-container > img{
-    width: 40px;
-    height: 40px;
+.sums-single-img-container > img {
+  width: 40px;
+  height: 40px;
 }
 
-.sums-single-img-container > span{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 0.8rem;
-    /* identical to box height */
-    display: flex;
-    align-items: center;
-    text-transform: capitalize;
-    font-feature-settings: 'pnum' on, 'lnum' on;
+.sums-single-img-container > span {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8rem;
+  /* identical to box height */
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  font-feature-settings: "pnum" on, "lnum" on;
 
-    /* text_color */
-    color: #33304B;
+  /* text_color */
+  color: #33304b;
 }

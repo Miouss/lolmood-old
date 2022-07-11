@@ -8,7 +8,6 @@ import SearchBar from "./SearchBar";
 
 import "../styles/Header.css";
 
-
 function Header(props) {
   if (props.data === null) {
     return null;
@@ -21,7 +20,11 @@ function Header(props) {
       </div>
 
       <div id="search-bar">
-        <SearchBar hideCount={false} data={props.data} setData={props.setData} />
+        <SearchBar
+          hideCount={false}
+          data={props.data}
+          setData={props.setData}
+        />
       </div>
 
       <div id="language-select">

@@ -1,54 +1,54 @@
-.stats-by-champ-card{
-    width: 480px;
-    height: 120px;
+.stats-by-champ-card {
+  width: 480px;
+  height: 120px;
 
-    display: flex;
+  display: flex;
 
-    background-color: white;
+  background-color: white;
 
-    text-align: center;
+  text-align: center;
 
-    box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 .stats-by-champ-card > * {
-    flex: 1;
+  flex: 1;
 }
 
 .stats-champ-container {
-    width: 15.1875rem; /* 243px */
-    height: 7.5rem; /*120px*/
+  width: 15.1875rem; /* 243px */
+  height: 7.5rem; /*120px*/
 
-    display: flex;
+  display: flex;
 
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 
-    overflow: hidden;
+  overflow: hidden;
 }
 
-.stats-champ-container > img{
-    height: 300%;
-    -webkit-transform : translate(0, 5rem);
+.stats-champ-container > img {
+  height: 300%;
+  -webkit-transform: translate(0, 5rem);
 }
 
-.stats-container{
-    display: flex;
+.stats-container {
+  display: flex;
 }
 
-.stats-container > *{
-    flex: 1;
-    
-    display: flex;
-    flex-direction: column;
+.stats-container > * {
+  flex: 1;
 
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-evenly;
 }
 
-.stats-container > :first-child{
-    color :rgba(120, 120, 180, 1);
+.stats-container > :first-child {
+  color: rgba(120, 120, 180, 1);
 }
 
-.stats-container > :last-child{
-    color :rgba(51, 48, 75, 1);
+.stats-container > :last-child {
+  color: rgba(51, 48, 75, 1);
 }
