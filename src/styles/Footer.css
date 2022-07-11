@@ -6,6 +6,7 @@ footer {
   padding-top: 2rem;
 
   text-align: center;
+  justify-content: space-evenly;
   color: white;
   background: #33304b;
 }
@@ -43,6 +44,7 @@ footer > * {
 
 #developpers-mention {
   display: flex;
+  align-items: center;
   flex-direction: column;
   margin-bottom: 2rem;
 
@@ -53,7 +55,6 @@ footer > * {
   flex: 1;
 
   display: flex;
-  padding-left: 8rem;
   gap: 0.4rem;
 }
 
