@@ -10,6 +10,8 @@
 }
 
 .summoner-stats-area > div:first-of-type {
+  height: 700px;
+
   display: flex;
 
   flex-direction: column;
