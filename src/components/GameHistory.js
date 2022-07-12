@@ -70,7 +70,7 @@ function GameHistory(props) {
   useEffect(() => {
     handleSwitchPage(0, previousIndex);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [props.data]);
 
   return (
     <>
