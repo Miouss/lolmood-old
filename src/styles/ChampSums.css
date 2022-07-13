@@ -50,11 +50,9 @@
   font-weight: 300;
   font-size: 0.8rem;
   /* identical to box height */
-  display: flex;
-  align-items: center;
   text-transform: capitalize;
   font-feature-settings: "pnum" on, "lnum" on;
-
+  text-align: center;
   /* text_color */
   color: #33304b;
 }
