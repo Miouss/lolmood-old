@@ -14,7 +14,7 @@ import "../styles/ChampStats.css";
 
 function ChampStats(props) {
   let [champStats, setChampStats] = useState(undefined);
-  let [displayPickRate, setDisplayPickRate] = useState(false);
+  let [displayPickRate, setDisplayPickRate] = useState(true);
 
   async function fetchChampStats() {
     const url = "http://lolmood.net/index.php?champName=" + props.champName;
@@ -63,11 +63,15 @@ function ChampStats(props) {
             <Runes
               runes={champStats["runes"]}
               statsMods={champStats["statsMods"]}
+              displayPickRate={displayPickRate}
             />
           </div>
 
           <div id="sums-component">
-            <Sums summoners={champStats["summoners"]} />
+            <Sums
+              summoners={champStats["summoners"]}
+              displayPickRate={displayPickRate}
+            />
           </div>
 
           <div id="items-component">
