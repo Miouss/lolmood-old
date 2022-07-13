@@ -1,54 +1,30 @@
-import { getSpellImg, getPassiveImg } from "./runesImg";
+import { getSpellImg } from "./runesImg";
 
-import runesJSON from "../assets/loldata/current/data/en_US/runesReforged.json";
 import champJSON from "../assets/loldata/current/data/en_US/championFull.json";
 
 import "../styles/ChampSkills.css";
 
 function ChampSkills(props) {
-  let idP = champJSON["data"][props.champName]["passive"]["image"][
-    "full"
-  ].slice(0, -4);
 
   let qImg = getSpellImg(champJSON["data"][props.champName]["spells"][0]["id"]);
   let wImg = getSpellImg(champJSON["data"][props.champName]["spells"][1]["id"]);
   let eImg = getSpellImg(champJSON["data"][props.champName]["spells"][2]["id"]);
   let rImg = getSpellImg(champJSON["data"][props.champName]["spells"][3]["id"]);
 
-  let skillsOrderMP = props.skills["mostPlayed"];
-  let skillsOrderMW = props.skills["mostWinrate"];
+  let skillsOrder = props.displayPickrate
+    ? props.skills["mostPlayed"]
+    : props.skills["mostWinrate"];
 
-  let skillPriorityMP = [
-    { Q: skillsOrderMP["order"].lastIndexOf("1") },
-    { W: skillsOrderMP["order"].lastIndexOf("2") },
-    { E: skillsOrderMP["order"].lastIndexOf("3") },
-  ];
-
-  skillPriorityMP.sort((a, b) => Object.values(a)[0] > Object.values(b)[0]);
-
-  let skillPriorityMW = [
-    { Q: skillsOrderMW["order"].lastIndexOf("1") },
-    { W: skillsOrderMW["order"].lastIndexOf("2") },
-    { E: skillsOrderMW["order"].lastIndexOf("3") },
-  ];
-
-  skillPriorityMW.sort((a, b) => Object.values(a)[0] > Object.values(b)[0]);
-
-  let skillPriorityToDisplay,
-    skillsOrderToDisplay = undefined;
-
-  if (props.displayPickrate) {
-    skillPriorityToDisplay = skillPriorityMP;
-    skillsOrderToDisplay = skillsOrderMP;
-  } else {
-    skillPriorityToDisplay = skillPriorityMW;
-    skillsOrderToDisplay = skillsOrderMW;
+  while(skillsOrder["order"].length < 17){
+    skillsOrder["order"] += "0";
   }
+
+  let skillPriority = getSkillsPriority(skillsOrder["order"]);
 
   function getSkillPriorityContainer(index) {
     let container = undefined;
 
-    switch (Object.keys(skillPriorityToDisplay[index - 1])[0]) {
+    switch (Object.keys(skillPriority[index - 1])[0]) {
       case "Q":
         container = (
           <>
@@ -82,7 +58,7 @@ function ChampSkills(props) {
   function getSkillsOrderContainer(skillIndex) {
     let container = [];
 
-    Array.from(skillsOrderToDisplay["order"]).forEach((skillUped, index) => {
+    Array.from(skillsOrder["order"]).forEach((skillUped, index) => {
       if (skillUped === skillIndex) {
         container.push(
           <span
@@ -169,6 +145,20 @@ function ChampSkills(props) {
       </div>
     </>
   );
+}
+
+function getSkillsPriority(skillsPath) {
+  return [
+    {
+      Q: skillsPath.match(/1/g).length < 5 ? 17 : skillsPath.lastIndexOf("1"),
+    },
+    {
+      W: skillsPath.match(/2/g).length < 5 ? 17 : skillsPath.lastIndexOf("2"),
+    },
+    {
+      E: skillsPath.match(/3/g).length < 5 ? 17 : skillsPath.lastIndexOf("3"),
+    },
+  ].sort((a, b) => Object.values(a)[0] > Object.values(b)[0]);
 }
 
 export default ChampSkills;
