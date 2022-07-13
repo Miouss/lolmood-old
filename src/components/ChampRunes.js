@@ -32,6 +32,16 @@ function ChampRunes(props) {
     true
   );
 
+  let runesTree, statsModsTree = null;
+
+  if(props.displayPickRate){
+    runesTree = runesMP;
+    statsModsTree = statsModsMP;
+  } else{
+    runesTree = runesMW;
+    statsModsTree = statsModsMW;
+  }
+
   return (
     <>
       <div id="runes-frame">
@@ -44,31 +54,31 @@ function ChampRunes(props) {
               <div>
                 <img
                   className="runes-tree-style"
-                  src={runesMW["primaryStyle"]["img"]}
+                  src={runesTree["primaryStyle"]["img"]}
                   alt="SLT"
                 />
-                <span> {runesMW["primaryStyle"]["name"]}</span>
+                <span> {runesTree["primaryStyle"]["name"]}</span>
               </div>
               <div id="primary-style-runes">
                 <div id="runes-tree-perk">
                   <img
-                    src={runesMW["primaryStyle"]["runes"][0]["img"]}
+                    src={runesTree["primaryStyle"]["runes"][0]["img"]}
                     alt="SLT"
                   />
                 </div>
                 <img
                   className="runes-tree-rune"
-                  src={runesMW["primaryStyle"]["runes"][1]["img"]}
+                  src={runesTree["primaryStyle"]["runes"][1]["img"]}
                   alt="SLT"
                 />
                 <img
                   className="runes-tree-rune"
-                  src={runesMW["primaryStyle"]["runes"][2]["img"]}
+                  src={runesTree["primaryStyle"]["runes"][2]["img"]}
                   alt="SLT"
                 />
                 <img
                   className="runes-tree-rune"
-                  src={runesMW["primaryStyle"]["runes"][3]["img"]}
+                  src={runesTree["primaryStyle"]["runes"][3]["img"]}
                   alt="SLT"
                 />
               </div>
@@ -80,21 +90,21 @@ function ChampRunes(props) {
                 <div>
                   <img
                     className="runes-tree-style"
-                    src={runesMW["subStyle"]["img"]}
+                    src={runesTree["subStyle"]["img"]}
                     alt="SLT"
                   />
-                  <span> {runesMW["subStyle"]["name"]}</span>
+                  <span> {runesTree["subStyle"]["name"]}</span>
                 </div>
 
                 <div id="sub-style-runes">
                   <img
                     className="runes-tree-rune"
-                    src={runesMW["subStyle"]["runes"][0]["img"]}
+                    src={runesTree["subStyle"]["runes"][0]["img"]}
                     alt="SLT"
                   />
                   <img
                     className="runes-tree-rune"
-                    src={runesMW["subStyle"]["runes"][1]["img"]}
+                    src={runesTree["subStyle"]["runes"][1]["img"]}
                     alt="SLT"
                   />
                 </div>
@@ -103,9 +113,9 @@ function ChampRunes(props) {
               <div id="stats-mods-container">
                 <img id="stats-mods-svg" src={statsModsSVG} alt="" />
 
-                <img src={statsModsMW["statsMods"][0]["img"]} alt="SLT" />
-                <img src={statsModsMW["statsMods"][1]["img"]} alt="SLT" />
-                <img src={statsModsMW["statsMods"][2]["img"]} alt="SLT" />
+                <img src={statsModsTree["statsMods"][0]["img"]} alt="SLT" />
+                <img src={statsModsTree["statsMods"][1]["img"]} alt="SLT" />
+                <img src={statsModsTree["statsMods"][2]["img"]} alt="SLT" />
               </div>
             </div>
           </div>
