@@ -1,5 +1,5 @@
 # Download Local Files
 
-Download this : https://mega.nz/file/9U0UXKSb#lI5ljiHJwkfCPDweCrOgbFZ3pSEq8xRdo4FvCAwGbx0
+Download this : https://mega.nz/file/9NUGURQT#G4WVIyk7h4emTA8MjFl6xbOBjy4lqehp_X09Xb8sCmg
 
 Extract the archive inside src/assets/
