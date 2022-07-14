@@ -21,13 +21,13 @@ export default function Footer() {
 
       <div id="developpers-mention">
         <div>
-          <a href="google.fr">
+          <a href="https://www.linkedin.com/in/samir-ghabi-aa58a2224/"  target="_blank">
             <FontAwesomeIcon icon={faLinkedin} size="2x" />
           </a>
           <span>Developped by Samir Ghabi</span>
         </div>
         <div>
-          <a href="google.fr">
+          <a href="google.fr"  target="_blank">
             <FontAwesomeIcon icon={faLinkedin} size="2x" />
           </a>
           <span>Designed by Evans Riss Yaw</span>
