@@ -21,7 +21,7 @@ export default function Footer() {
 
       <div id="developpers-mention">
         <div>
-          <a href="https://www.linkedin.com/in/samir-ghabi-aa58a2224/"  target="_blank">
+          <a href="https://www.linkedin.com/in/samir-ghabi-aa58a2224/"  target="_blank" rel="noreferrer">
             <FontAwesomeIcon icon={faLinkedin} size="2x" />
           </a>
           <span>Developped by Samir Ghabi</span>
