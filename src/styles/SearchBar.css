@@ -60,6 +60,8 @@ select {
   text-indent: 1px;
   text-overflow: "";
   text-align: center;
+  border: none;
+  outline: none;
 }
 
 #summoner-search-block {
@@ -84,15 +86,14 @@ select {
 }
 
 #summoner-search {
-  background-color: inherit;
   border: none;
   outline: none;
 
   text-align: center;
 
   margin-top: 0.4rem;
-  padding-left: 0.4rem;
-  padding-right: 1rem;
+  margin-left: 0.4rem;
+  margin-right: 1rem;
 }
 
 #count-search-block {
