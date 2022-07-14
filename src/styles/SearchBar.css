@@ -92,8 +92,10 @@ select {
   text-align: center;
 
   margin-top: 0.4rem;
-  margin-left: 0.4rem;
+  margin-left: 1rem;
   margin-right: 1rem;
+
+  -webkit-text-fill-color: none;
 }
 
 #count-search-block {
@@ -106,6 +108,13 @@ select {
   background-image: url(../assets/search-input.svg);
 
   padding-bottom: 0.1rem;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 40px white inset !important;
 }
 
 #count-search-block > label {
