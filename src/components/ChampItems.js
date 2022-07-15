@@ -63,19 +63,19 @@ function ChampItems(props) {
     rate = undefined;
 
   if (props.displayPickRate) {
-    startItems = startItemsMP;
-    coreItems = coreItemsMP;
-    fourthItems = fourthItemsMP;
-    fifthItems = fifthItemsMP;
-    sixthItems = sixthItemsMP;
-    rate = "playRate";
-  } else {
     startItems = startItemsMW;
     coreItems = coreItemsMW;
     fourthItems = fourthItemsMW;
     fifthItems = fifthItemsMW;
     sixthItems = sixthItemsMW;
     rate = "winRate";
+  } else {
+    startItems = startItemsMP;
+    coreItems = coreItemsMP;
+    fourthItems = fourthItemsMP;
+    fifthItems = fifthItemsMP;
+    sixthItems = sixthItemsMP;
+    rate = "playRate";
   }
 
   function getSingleItemContainer(itemsArray) {
