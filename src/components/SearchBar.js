@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { fetchGamesData } from "./fetchData";
 
 import SearchOption from "./SearchOption";
 
@@ -22,24 +24,18 @@ function SearchBar(props) {
 
   let [searchIcon, setSearchIcon] = useState(faMagnifyingGlass);
 
-  async function fetchData() {
-    const url =
-      "http://lolmood.net/index.php?summonerName=" +
-      document.getElementById("summoner-search").value +
-      "&region=" +
-      regionSelected +
-      "&count=" +
-      document.getElementById("count-search").value;
+  let navigate = useNavigate();
 
-    const res = await fetch(url);
-
-    const data = await res.json();
+  async function requestData() {
+    const data = await fetchGamesData(document.getElementById("summoner-search").value, regionSelected, document.getElementById("count-search").value)
 
     setSearchIcon(faMagnifyingGlass);
     if (typeof data === "string") {
       alert(data);
     } else {
       props.setData(data);
+
+      navigate("/games/" + regionSelected + "/" + data["Account"]["name"]);
     }
   }
 
@@ -57,7 +53,7 @@ function SearchBar(props) {
       alert("You have to enter a number of history game between 1 - 49");
     } else {
       setSearchIcon(faSpinner);
-      fetchData();
+      requestData();
     }
   }
 

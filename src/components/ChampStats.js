@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import Switch from "bootstrap-switch-button-react";
 
@@ -15,9 +16,14 @@ import "../styles/ChampStats.css";
 function ChampStats(props) {
   let [champStats, setChampStats] = useState(undefined);
   let [displayPickRate, setDisplayPickRate] = useState(true);
+  
+  const nav = useNavigate();
+  const location = useLocation();
+  
+  let champName = location["pathname"].replace("/champ/", "");
 
   async function fetchChampStats() {
-    const url = "http://lolmood.net/index.php?champName=" + props.champName;
+    const url = "http://lolmood.net/index.php?champName=" + champName;
 
     const res = await fetch(url);
 
@@ -30,6 +36,7 @@ function ChampStats(props) {
     fetchChampStats();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
 
   if (champStats === undefined) {
     return null;
@@ -51,12 +58,12 @@ function ChampStats(props) {
           <button id="back-button-component">
             <img
               src={backButtonSVG}
-              onClick={() => props.setGoToChampPage([false, ""])}
+              onClick={() => location["state"] === null ? nav("/home") : nav(-1)}
             />
           </button>
 
           <div id="champ-component">
-            <Champ champName={props.champName} />
+            <Champ champName={champName} />
           </div>
 
           <div id="runes-component">
@@ -85,7 +92,7 @@ function ChampStats(props) {
           <div id="skills-component">
             <Skills
               skills={champStats["skills"]}
-              champName={props.champName}
+              champName={champName}
               displayPickRate={displayPickRate}
             />
           </div>
