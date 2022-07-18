@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import GameHistoryCardItems from "./GameHistoryCardItems";
 import GameHistoryCardStyles from "./GameHistoryCardStyles";
@@ -9,6 +10,8 @@ import "../styles/GameHistoryCard.css";
 
 function GameHistoryCard(props) {
   let [colorOpacity, setColorOpacity] = useState(1);
+
+  const nav = useNavigate();
 
   const champName = props.data["name"];
   let lane = props.data["lane"].toLowerCase();
@@ -43,7 +46,7 @@ function GameHistoryCard(props) {
       <div
         onMouseEnter={() => setColorOpacity(0.5)}
         onMouseLeave={() => setColorOpacity(1)}
-        onClick={() => props.setGoToChampPage([true, champName])}
+        onClick={() => nav("/champ/" + champName, {state:{champName:champName}})}
         className="game-history-card"
         style={{ border: "solid 1px " + color }}
       >
