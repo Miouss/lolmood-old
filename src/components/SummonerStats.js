@@ -16,7 +16,7 @@ function SummonerStats(props) {
     const data = await fetchGamesData(summonerName, region);
     if(typeof data === "string"){
       alert(data);
-      navigate("/home");
+      navigate("/");
     }else{
       props.setData(data);
     }

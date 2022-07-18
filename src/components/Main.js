@@ -10,7 +10,7 @@ function Main(props) {
   return (
     <Routes>
       <Route
-        path="/home"
+        path="/"
         element={
           <>
             <div className="search-container">
