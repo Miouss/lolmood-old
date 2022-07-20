@@ -92,6 +92,7 @@ function ChampStats(props) {
           <div id="skills-component">
             <Skills
               skills={champStats["skills"]}
+              evolves={champStats["evolves"]}
               champName={champName}
               displayPickRate={displayPickRate}
             />
