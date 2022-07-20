@@ -14,7 +14,7 @@ function ChampSkills(props) {
     ? getEvolvesPriority(props.evolves["mostPlayed"]["order"])
     : getEvolvesPriority(props.evolves["mostWinrate"]["order"]);
 
-    console.log(evolvePriority)
+  console.log(evolvePriority[0]);
   let skillsOrder = props.displayPickrate
     ? props.skills["mostPlayed"]
     : props.skills["mostWinrate"];
@@ -87,6 +87,34 @@ function ChampSkills(props) {
     return container;
   }
 
+  function checkEvolvePriority(skillPriority) {
+    if (skillPriority.length === 0) {
+      return (
+          <span style={{flex: "1", fontStyle: "italic", margin: "1rem"}}>This champ has no evolution</span>
+      );
+    }
+
+    return (
+      <>
+        <div className="single-skill-priority-container">
+          {getSkillPriorityContainer(1, evolvePriority)}
+        </div>
+        <div className="skill-priority-separator">
+          <span>{">"}</span>
+        </div>
+        <div className="single-skill-priority-container">
+          {getSkillPriorityContainer(2, evolvePriority)}
+        </div>
+        <div className="skill-priority-separator">
+          <span>{">"}</span>
+        </div>
+        <div className="single-skill-priority-container">
+          {getSkillPriorityContainer(3, evolvePriority)}
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       <div id="skills-frame">
@@ -132,22 +160,9 @@ function ChampSkills(props) {
           </div>
           <div id="skills-speciality-frame">
             <span>Evolution Priority</span>
+
             <div className="skills-priority-container">
-              <div className="single-skill-priority-container">
-                {getSkillPriorityContainer(1, evolvePriority)}
-              </div>
-              <div className="skill-priority-separator">
-                <span>{">"}</span>
-              </div>
-              <div className="single-skill-priority-container">
-                {getSkillPriorityContainer(2, evolvePriority)}
-              </div>
-              <div className="skill-priority-separator">
-                <span>{">"}</span>
-              </div>
-              <div className="single-skill-priority-container">
-                {getSkillPriorityContainer(3, evolvePriority)}
-              </div>
+              {checkEvolvePriority(evolvePriority)}
             </div>
           </div>
         </div>
@@ -176,11 +191,14 @@ function getEvolvesPriority(evolvesPath) {
   let eIndex = evolvesPath.indexOf("3");
   let rIndex = evolvesPath.indexOf("4");
 
-  if(qIndex === -1) qIndex = 4;
-  if(wIndex === -1) wIndex = 4;
-  if(eIndex === -1) eIndex = 4;
-  if(rIndex === -1) rIndex = 4;
+  if (qIndex === -1) qIndex = 5;
+  if (wIndex === -1) wIndex = 5;
+  if (eIndex === -1) eIndex = 5;
+  if (rIndex === -1) rIndex = 5;
 
+  if ((qIndex === 5) & (wIndex === 5) & (eIndex === 5) & (rIndex === 5)) {
+    return [];
+  }
 
   return [
     {
@@ -194,7 +212,7 @@ function getEvolvesPriority(evolvesPath) {
     },
     {
       R: rIndex,
-    }
+    },
   ].sort((a, b) => Object.values(a)[0] > Object.values(b)[0]);
 }
 
