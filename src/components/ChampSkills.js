@@ -14,7 +14,6 @@ function ChampSkills(props) {
     ? getEvolvesPriority(props.evolves["mostPlayed"]["order"])
     : getEvolvesPriority(props.evolves["mostWinrate"]["order"]);
 
-  console.log(evolvePriority[0]);
   let skillsOrder = props.displayPickrate
     ? props.skills["mostPlayed"]
     : props.skills["mostWinrate"];

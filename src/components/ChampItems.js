@@ -63,19 +63,19 @@ function ChampItems(props) {
     rate = undefined;
 
   if (props.displayPickRate) {
-    startItems = startItemsMW;
-    coreItems = coreItemsMW;
-    fourthItems = fourthItemsMW;
-    fifthItems = fifthItemsMW;
-    sixthItems = sixthItemsMW;
-    rate = "winRate";
-  } else {
     startItems = startItemsMP;
     coreItems = coreItemsMP;
     fourthItems = fourthItemsMP;
     fifthItems = fifthItemsMP;
     sixthItems = sixthItemsMP;
     rate = "playRate";
+  } else {
+    startItems = startItemsMW;
+    coreItems = coreItemsMW;
+    fourthItems = fourthItemsMW;
+    fifthItems = fifthItemsMW;
+    sixthItems = sixthItemsMW;
+    rate = "winRate";
   }
 
   function getSingleItemContainer(itemsArray) {
@@ -88,7 +88,9 @@ function ChampItems(props) {
             <img className="items-img" src={item["img"]} />
             <div className="single-item-container-rate">
               <span>{item[rate]}%</span>
-              <span>{item["played"]} games</span>
+              {props.displayPickRate ? null : (
+                <span>{item["played"]} games</span>
+              )}
             </div>
           </div>
         </>
@@ -108,6 +110,15 @@ function ChampItems(props) {
     return itemContainer;
   }
 
+  function getPickRateContainerForNthItems(nthItems) {
+    return(
+    <>
+      <span className="nth-items-container" style={{paddingLeft : "0.4rem"}}>
+        ({nthItems[0]["played"]} games)
+      </span>
+    </>);
+  }
+
   return (
     <>
       <div id="items-frame">
@@ -122,7 +133,7 @@ function ChampItems(props) {
                 {getMultipleItemsContainer(startItems["startItems"])}
                 <div className="single-item-container-rate">
                   <span>{startItems["rate"]}%</span>
-                  <span>{startItems["played"]} Matches</span>
+                  <span>{startItems["played"]} games</span>
                 </div>
               </div>
             </div>
@@ -133,21 +144,27 @@ function ChampItems(props) {
                 {getMultipleItemsContainer(coreItems["coreItems"])}
                 <div className="single-item-container-rate">
                   <span>{coreItems["rate"]}%</span>
-                  <span>{coreItems["played"]} Matches</span>
+                  <span>{coreItems["played"]} games</span>
                 </div>
               </div>
             </div>
 
             <div id="fourth-fifth-items-container">
               <div>
-                <span className="items-title">Fourth Items</span>
+                <span className="items-title">4th Item</span>
+                {props.displayPickRate
+                  ? getPickRateContainerForNthItems(fourthItems)
+                  : null}
                 <div className="fourth-fifth-items-display-container">
                   {getSingleItemContainer(fourthItems)}
                 </div>
               </div>
 
               <div>
-                <span className="items-title">Fifth Items</span>
+                <span className="items-title">5th Item </span>
+                {props.displayPickRate
+                  ? getPickRateContainerForNthItems(fifthItems)
+                  : null}
                 <div className="fourth-fifth-items-display-container">
                   {getSingleItemContainer(fifthItems)}
                 </div>
@@ -155,7 +172,10 @@ function ChampItems(props) {
             </div>
 
             <div id="sixth-items">
-              <span className="items-title">Last Item</span>
+              <span className="items-title">Last Item  {props.displayPickRate
+                  ? getPickRateContainerForNthItems(sixthItems)
+                  : null}</span>
+             
               <div id="sixth-items-display-container">
                 {getSingleItemContainer(sixthItems)}
               </div>
