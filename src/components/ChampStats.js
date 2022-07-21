@@ -46,9 +46,9 @@ function ChampStats(props) {
         <div id="champ-stats-component">
           <div id="switch-component">
             <Switch
-              onlabel="Pick Rate"
+              onlabel="Win Rate"
               onstyle="info"
-              offlabel="Win Rate"
+              offlabel="Pick Rate"
               offstyle="info"
               width={130}
               onChange={() => setDisplayPickRate(!displayPickRate)}
