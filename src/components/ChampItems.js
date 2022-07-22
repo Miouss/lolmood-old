@@ -103,20 +103,50 @@ function ChampItems(props) {
   function getMultipleItemsContainer(itemsArray) {
     let itemContainer = [];
 
+    let duplicateIds = {};
+
     itemsArray.forEach((item) => {
-      itemContainer.push(<img className="items-img" src={item["img"]} />);
+      if (duplicateIds[item["id"]] === undefined) {
+        duplicateIds[item["id"]] = 1;
+      } else {
+        duplicateIds[item["id"]] += 1;
+      }
+    });
+
+    itemsArray.forEach((item) => {
+      if (duplicateIds[item["id"]] !== 0) {
+        let duplicateItemsContainer =
+          duplicateIds[item["id"]] > 1 ? (
+            <>
+              <span className="duplicate-items">
+                x{duplicateIds[item["id"]]}
+              </span>
+            </>
+          ) : null;
+
+        itemContainer.push(
+          <>
+            <div style={{ position: "relative" }}>
+              <img className="items-img" src={item["img"]} />
+              {duplicateItemsContainer}
+            </div>
+          </>
+        );
+        duplicateIds[item["id"]] = 0;
+      }
     });
 
     return itemContainer;
   }
 
   function getPickRateContainerForNthItems(nthItems) {
-    return(
-    <>
-      <span className="nth-items-container" style={{paddingLeft : "0.4rem"}}>
-        ({nthItems[0]["played"]} games)
-      </span>
-    </>);
+    return (
+      <>
+        <span className="nth-items-container" style={{ paddingLeft: "0.4rem" }}>
+          ({nthItems[0]["played"]} games)
+        </span>
+      </>
+    );
   }
 
   return (
@@ -172,10 +202,13 @@ function ChampItems(props) {
             </div>
 
             <div id="sixth-items">
-              <span className="items-title">Last Item  {props.displayPickRate
+              <span className="items-title">
+                Last Item{" "}
+                {props.displayPickRate
                   ? getPickRateContainerForNthItems(sixthItems)
-                  : null}</span>
-             
+                  : null}
+              </span>
+
               <div id="sixth-items-display-container">
                 {getSingleItemContainer(sixthItems)}
               </div>
