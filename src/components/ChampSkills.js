@@ -26,7 +26,7 @@ function ChampSkills(props) {
 
   function getSkillPriorityContainer(index, array) {
     let container = undefined;
-    console.log(Object.keys(array[index - 1])[0]);
+
     switch (Object.keys(array[index - 1])[0]) {
       case "Q":
         container = (
