@@ -19,18 +19,28 @@ function ChampItems(props) {
     getItemImg
   );
 
-  let coreItemsMP = initializeTree(
-    props.completedItems["coreItems"]["mostPlayed"][0],
-    "coreItems",
-    props.completedItems["coreItems"]["mostPlayed"][0]["coreItems"].length,
-    getItemImg
-  );
-  let coreItemsMW = initializeTree(
-    props.completedItems["coreItems"]["mostWinrate"][0],
-    "coreItems",
-    props.completedItems["coreItems"]["mostWinrate"][0]["coreItems"].length,
-    getItemImg
-  );
+  console.log(props.completedItems["coreItems"]);
+
+  let coreItemsMP =
+    typeof props.completedItems["coreItems"] !== "string"
+      ? initializeTree(
+          props.completedItems["coreItems"]["mostPlayed"][0],
+          "coreItems",
+          props.completedItems["coreItems"]["mostPlayed"][0]["coreItems"]
+            .length,
+          getItemImg
+        )
+      : undefined;
+  let coreItemsMW =
+    typeof props.completedItems["coreItems"] !== "string"
+      ? initializeTree(
+          props.completedItems["coreItems"]["mostWinrate"][0],
+          "coreItems",
+          props.completedItems["coreItems"]["mostWinrate"][0]["coreItems"]
+            .length,
+          getItemImg
+        )
+      : undefined;
 
   let fourthItemsMP = fillMultipleItemsArray("fourthItem", "mostPlayed");
   let fifthItemsMP = fillMultipleItemsArray("fifthItem", "mostPlayed");
@@ -79,8 +89,7 @@ function ChampItems(props) {
   }
 
   function getSingleItemContainer(itemsArray) {
-
-    if(itemsArray[0]["id"] === 7050){
+    if (itemsArray[0]["id"] === 7050) {
       return getEmptyItemsContainer();
     }
 
@@ -105,12 +114,17 @@ function ChampItems(props) {
     return itemContainer;
   }
 
-  function getMultipleItemsContainer(itemsArray) {
+  function getMultipleItemsContainer(itemsArray, type) {
+
+    if(itemsArray === undefined){
+      return getEmptyItemsContainer();
+    }
+
     let itemContainer = [];
 
     let duplicateIds = {};
 
-    itemsArray.forEach((item) => {
+    itemsArray[type].forEach((item) => {
       if (duplicateIds[item["id"]] === undefined) {
         duplicateIds[item["id"]] = 1;
       } else {
@@ -118,7 +132,7 @@ function ChampItems(props) {
       }
     });
 
-    itemsArray.forEach((item) => {
+    itemsArray[type].forEach((item) => {
       if (duplicateIds[item["id"]] !== 0) {
         let duplicateItemsContainer =
           duplicateIds[item["id"]] > 1 ? (
@@ -141,11 +155,20 @@ function ChampItems(props) {
       }
     });
 
+    itemContainer.push(
+      <>
+        <div className="single-item-container-rate">
+          <span>{itemsArray["rate"]}%</span>
+          <span>{itemsArray["played"]} games</span>
+        </div>
+      </>
+    );
+
     return itemContainer;
   }
 
   function getPickRateContainerForNthItems(nthItems) {
-    if(nthItems[0]["id"] === 7050){
+    if (nthItems[0]["id"] === 7050) {
       return null;
     }
 
@@ -158,12 +181,14 @@ function ChampItems(props) {
     );
   }
 
-  function getEmptyItemsContainer(){
-    return(<>
-    <div class="empty-items-container">
-      No games were found, so there is no items stats to display
-    </div>
-    </>)
+  function getEmptyItemsContainer() {
+    return (
+      <>
+        <div class="empty-items-container">
+          No games with enough data were found, so there is no items stats to display
+        </div>
+      </>
+    );
   }
 
   return (
@@ -177,22 +202,14 @@ function ChampItems(props) {
             <div id="starting-items">
               <span className="items-title">Starting Items</span>
               <div className="items-display-area">
-                {getMultipleItemsContainer(startItems["startItems"])}
-                <div className="single-item-container-rate">
-                  <span>{startItems["rate"]}%</span>
-                  <span>{startItems["played"]} games</span>
-                </div>
+                {getMultipleItemsContainer(startItems, "startItems")}
               </div>
             </div>
 
             <div id="core-items">
               <span className="items-title">Core Items</span>
               <div className="items-display-area">
-                {getMultipleItemsContainer(coreItems["coreItems"])}
-                <div className="single-item-container-rate">
-                  <span>{coreItems["rate"]}%</span>
-                  <span>{coreItems["played"]} games</span>
-                </div>
+                {getMultipleItemsContainer(coreItems, "coreItems")}
               </div>
             </div>
 
