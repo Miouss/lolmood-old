@@ -45,6 +45,7 @@
 }
 
 .sums-single-img-container > span {
+  width: 30px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
