@@ -37,7 +37,6 @@
 /* ALL ITEMS CONTAINER */
 
 #all-items-container {
-
   position: absolute;
 
   width: 305px;
@@ -86,6 +85,26 @@
   align-items: center;
 }
 
+.duplicate-items {
+  position: absolute;
+  bottom: -8px;
+  right: -6px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 0.9rem;
+
+  width: 24px;
+  height: 24px;
+
+  color: white;
+
+  border-radius: 12px;
+  background-color: black;
+}
+
 .items-img {
   width: 48px;
   height: 48px;
@@ -130,7 +149,6 @@
 }
 
 .fourth-fifth-items-display-container {
-
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -156,7 +174,7 @@
 
 /* NTH ITEMS DISPLAY LAYOUT */
 
-.nth-items-container{
+.nth-items-container {
   text-align: center;
   font-size: 0.9rem;
   font-weight: bold;
