@@ -21,6 +21,7 @@ function ChampStats(props) {
   const location = useLocation();
   
   let champName = location["pathname"].replace("/champ/", "");
+  champName = champName.charAt(0).toUpperCase() + champName.slice(1);
 
   async function fetchChampStats() {
     const url = "http://lolmood.net/index.php?champName=" + champName;
@@ -28,6 +29,11 @@ function ChampStats(props) {
     const res = await fetch(url);
 
     const data = await res.json();
+
+    if(typeof data === "string"){
+      alert(data);
+      nav("/");
+    }
 
     setChampStats(data);
   }
