@@ -79,6 +79,11 @@ function ChampItems(props) {
   }
 
   function getSingleItemContainer(itemsArray) {
+
+    if(itemsArray[0]["id"] === 7050){
+      return getEmptyItemsContainer();
+    }
+
     let itemContainer = [];
 
     itemsArray.forEach((item) => {
@@ -140,6 +145,10 @@ function ChampItems(props) {
   }
 
   function getPickRateContainerForNthItems(nthItems) {
+    if(nthItems[0]["id"] === 7050){
+      return null;
+    }
+
     return (
       <>
         <span className="nth-items-container" style={{ paddingLeft: "0.4rem" }}>
@@ -147,6 +156,14 @@ function ChampItems(props) {
         </span>
       </>
     );
+  }
+
+  function getEmptyItemsContainer(){
+    return(<>
+    <div class="empty-items-container">
+      No games were found, so there is no items stats to display
+    </div>
+    </>)
   }
 
   return (
