@@ -57,8 +57,9 @@ function ChampStats(props) {
 
           <button id="back-button-component">
             <img
-              src={backButtonSVG}
+              src={backButtonSVG} 
               onClick={() => location["state"] === null ? nav("/") : nav(-1)}
+              alt="slt"
             />
           </button>
 
