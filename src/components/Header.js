@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 import logoSVG from "../assets/logo.svg";
 import englishFlag from "../assets/english-flag.svg";
@@ -9,7 +10,9 @@ import SearchBar from "./SearchBar";
 import "../styles/Header.css";
 
 function Header(props) {
-  if (props.data === null) {
+  let location = useLocation();
+
+  if (location["pathname"] === "/") {
     return null;
   }
   return (
