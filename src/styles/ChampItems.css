@@ -48,8 +48,6 @@
   margin-left: 1rem;
   padding-right: 1rem;
 
-
-
   gap: 2.6rem;
 }
 
@@ -193,6 +191,11 @@
 
 #sixth-items-display-container > :last-child {
   justify-content: center;
+  padding-left: 1rem;
+}
+
+#sixth-items-display-container > :nth-child(2){
+  justify-content: flex-end;
 }
 
 /* NTH ITEMS DISPLAY LAYOUT */
