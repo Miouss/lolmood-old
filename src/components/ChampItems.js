@@ -19,8 +19,6 @@ function ChampItems(props) {
     getItemImg
   );
 
-  console.log(props.completedItems["coreItems"]);
-
   let coreItemsMP =
     typeof props.completedItems["coreItems"] !== "string"
       ? initializeTree(
