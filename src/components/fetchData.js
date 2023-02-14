@@ -1,6 +1,6 @@
 export async function fetchGamesData(summonerName, region, count = 10) {
     const url =
-      "http://lolmood.net/index.php?summonerName=" +
+      "https://lolmood.net/index.php?summonerName=" +
       summonerName +
       "&region=" +
       region +

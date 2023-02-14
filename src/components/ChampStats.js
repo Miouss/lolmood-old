@@ -24,7 +24,7 @@ function ChampStats(props) {
   champName = champName.charAt(0).toUpperCase() + champName.slice(1);
 
   async function fetchChampStats() {
-    const url = "http://lolmood.net/index.php?champName=" + champName;
+    const url = "https://lolmood.net/index.php?champName=" + champName;
 
     const res = await fetch(url);
 
