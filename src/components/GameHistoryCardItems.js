@@ -44,6 +44,7 @@ function GameHistoryCardItems(props) {
                   itemIcon={itemIcon}
                   identifier={props.identifier}
                   index={index}
+                  lang={props.lang}
                 />
               );
             }

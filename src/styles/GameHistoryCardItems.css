@@ -98,7 +98,7 @@ attention {
   color: white;
 }
 
-attention:before {
+.plus-prefix attention:before {
   content: "+";
 }
 

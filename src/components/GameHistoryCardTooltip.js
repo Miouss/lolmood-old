@@ -25,7 +25,8 @@ function GameHistoryCardTooltip(props) {
         props.idItems,
         props.itemIcon,
         props.identifier,
-        props.index
+        props.index,
+        props.lang
       );
     default:
   }
@@ -95,11 +96,12 @@ function setPerkToolTip(runeJSON, idPerk, perkIcon) {
   );
 }
 
-function setItemsToolTip(itemsJSON, idItems, itemIcon, identifier, index) {
+function setItemsToolTip(itemsJSON, idItems, itemIcon, identifier, index, lang) {
+  
   return (
     <article data-tip data-for={`${identifier}${index}`}>
       <ReactTooltip
-        className="tooltip-container"
+        className={`tooltip-container ${lang === "en" && "plus-prefix"}`}
         id={`${identifier}${index}`}
         effect="solid"
         data-place="bottom"
@@ -111,6 +113,14 @@ function setItemsToolTip(itemsJSON, idItems, itemIcon, identifier, index) {
         <div
           dangerouslySetInnerHTML={{
             __html: itemsJSON["data"][idItems[index]]["description"],
+          }}
+          style={{
+            position: "relative",
+            "& attention:before": {
+              content: '"+"',
+              position: "absolute",
+              left: 0
+            }
           }}
         ></div>
       </ReactTooltip>
