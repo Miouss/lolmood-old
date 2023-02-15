@@ -6,6 +6,13 @@ header {
   gap: 1rem;
 }
 
+header input:-webkit-autofill,
+header input:-webkit-autofill:hover,
+header input:-webkit-autofill:focus,
+header input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 15px #FFFFFF inset !important;
+}
+
 header > * {
   padding-bottom: 0.5rem;
 }

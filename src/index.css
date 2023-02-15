@@ -20,6 +20,9 @@ body {
   width: 100%;
 }
 
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 30px #F7F7FF inset !important;
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 15px #F7F7FF inset !important;
 }
