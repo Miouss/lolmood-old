@@ -19,3 +19,7 @@ body {
   height: 100%;
   width: 100%;
 }
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #F7F7FF inset !important;
+}
