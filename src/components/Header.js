@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import logoSVG from "../assets/logo.svg";
 import englishFlag from "../assets/english-flag.svg";
@@ -11,13 +11,14 @@ import "../styles/Header.css";
 
 function Header(props) {
   let location = useLocation();
+  const navigate = useNavigate();
 
   if (location["pathname"] === "/") {
     return null;
   }
   return (
     <>
-      <div id="header-logo">
+      <div id="header-logo" onClick={() => navigate('/')}>
         <img src={logoSVG} alt="Logo" />
         <span>LOL Mood</span>
       </div>

@@ -24,6 +24,10 @@ header > * {
   gap: 2rem;
 }
 
+#header-logo:hover {
+  cursor: pointer;
+}
+
 #header-logo > span {
   align-self: center;
   text-align: center;
