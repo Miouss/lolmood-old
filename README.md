@@ -8,4 +8,4 @@ Extract the archive inside src/assets/
 
 # Test the website
 
-You can test the website by selecting EUW as region and entering "Noah7" in the summoner search area
+You can test the website by selecting EUW as region and entering "PGE Dova" in the summoner search area
