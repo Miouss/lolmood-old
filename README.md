@@ -1,6 +1,6 @@
-The api's repo is [here](https://github.com/Miouss/lol-mood-api)
+# Video demonstration : https://streamable.com/zqwq4h
 
-video demonstration : https://streamable.com/zqwq4h
+The api's repo is [here](https://github.com/Miouss/lol-mood-api)
 
 # Test the website
 
